@@ -1,0 +1,110 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Loading</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        font-family: Arial, sans-serif;
+        color: #111;
+    }
+
+    .container {
+        text-align: center;
+        width: 260px;
+    }
+
+    .spinner {
+        width: 70px;
+        height: 70px;
+        border: 6px solid #e5e7eb;
+        border-top: 6px solid #111;
+        border-radius: 50%;
+        margin: 0 auto 18px;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .title {
+        font-size: 16px;
+        letter-spacing: 2px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    .bar {
+        width: 100%;
+        height: 6px;
+        background: #e5e7eb;
+        border-radius: 50px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+
+    .fill {
+        height: 100%;
+        width: 0%;
+        background: #111;
+        animation: load 3s ease-in-out forwards;
+    }
+
+    @keyframes load {
+        0% { width: 0%; }
+        100% { width: 100%; }
+    }
+
+    .text {
+        font-size: 13px;
+        color: #555;
+    }
+
+    .check {
+        display: none;
+        font-size: 14px;
+        margin-top: 10px;
+        color: #111;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="spinner"></div>
+    <div class="title">PROCESSING</div>
+
+    <div class="bar">
+        <div class="fill"></div>
+    </div>
+
+    <div class="text">Preparing your experience...</div>
+    <div class="check" id="check">Completed ✓</div>
+</div>
+
+<script>
+    setTimeout(() => {
+        document.querySelector(".spinner").style.display = "none";
+        document.getElementById("check").style.display = "block";
+    }, 3000);
+
+    setTimeout(() => {
+        window.location.href = "https://macquery-online-1.jimdosite.com/";
+    }, 3800);
+</script>
+
+</body>
+</html>
+```
